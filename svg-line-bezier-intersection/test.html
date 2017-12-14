@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SVG path intersection test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yui/3.18.1/yui/yui-debug.js"></script>
+  </head>
+   <body class="yui3-skin-sam">
+    <svg id="svg" width="300" height="300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <g id="intersection">
+          <circle r="0.025" fill="none" stroke="red" stroke-width="0.005"/>
+          <circle r="0.01" fill="black"/>
+        </g>
+      </defs>
+      <g id="basegroup" transform="matrix(320,0,0,-320,140,360)">
+        <line x1="-0.15" y1="0.85" x2="-0.05" y2="0.19" stroke="orange" stroke-width="0.01" opacity="0.5"/>
+        <path d="M0.03166666666666667,0.5c0.002,0.002,0.007,0.006,0.009,0.009c0.003,0.003,0.011,0.011,0.014,0.015c0.006,0.008,0.018,0.023,0.023,0.032c0.006,0.013,0.017,0.038,0.019,0.052c0.004,0.017,0.009,0.052,0.005,0.069c-0.002,0.013,-0.015,0.045,-0.029,0.047c-0.015,0.002,-0.043,-0.022,-0.053,-0.034c-0.012,-0.014,-0.021,-0.052,-0.033,-0.067c-0.003,-0.005,-0.018,-0.01,-0.024,-0.008c-0.012,0.002,-0.03,0.02,-0.042,0.023c-0.01,0.002,-0.031,-0.002,-0.039,-0.006c-0.009,-0.004,-0.023,-0.018,-0.026,-0.027c-0.003,-0.011,-0.001,-0.035,0.006,-0.043c0.011,-0.015,0.044,-0.035,0.06,-0.045c0.008,-0.006,0.041,-0.008,0.037,-0.017c-0.006,-0.013,-0.041,-0.013,-0.053,-0.02c-0.015,-0.009,-0.045,-0.03,-0.053,-0.046c-0.004,-0.007,0.006,-0.026,0.011,-0.033c0.005,-0.007,0.021,-0.016,0.028,-0.021c0.007,-0.005,0.02,-0.017,0.029,-0.018c0.009,-0.001,0.028,0.007,0.037,0.008c0.007,0.001,0.023,0.002,0.028,-0.003c0.012,-0.009,0.023,-0.038,0.033,-0.047c0.011,-0.01,0.035,-0.029,0.049,-0.029c0.012,0.001,0.03,0.021,0.034,0.032c0.006,0.013,0.008,0.043,0.006,0.058c-0.002,0.015,-0.014,0.044,-0.022,0.057c-0.008,0.012,-0.03,0.032,-0.04,0.042c-0.005,0.004,-0.017,0.009,-0.021,0.015c-0.001,0.001,0.005,0.004,0.007,0.005z" transform="rotate(0 0 0.5)" fill="red" fill-opacity="0.24" stroke-width="0.003124982118748677" stroke="#0000FF" stroke-opacity="0.6"/>
+      </g>
+      <text id="info" x="5" y="10pt" font-size="10pt">Loading...</text>
+    </svg>
+    <script type="text/javascript">
+YUI_config = {
+  modules: {
+    'acmacs-base': { fullpath: '../assets/js/acmacs-base.js' },
+    'acmacs-profile': { fullpath: '../assets/js/acmacs-profile.js' },
+    'svg-intersect': { fullpath: '../assets/js/svg-intersect.js' }
+  }
+};
+YUI({
+  combine: false,
+  allowRollup: false,
+  useBrowserConsole: false,
+  filter: 'raw',
+  filters: {
+    'acmacs-base': 'debug'
+  }
+}).use('acmacs-base', 'svg-intersect', function (Y) {
+  var
+    points = [],
+    shapes = [],
+    info,
+    loadShapes,
+    showIntersections;
+
+  function initTest() {
+    var infoElem = document.getElementById("info");
+    info = infoElem.firstChild;
+
+    loadShapes();
+    console.log(['shapes', shapes]);
+
+    showIntersections();
+  };
+
+  loadShapes = function () {
+    var
+      children = document.getElementById('basegroup').childNodes,
+      i,
+      child,
+      shape;
+
+    for (i = 0; i < children.length; i++) {
+      child = children.item(i);
+
+      if (child.nodeType === 1) {
+        if (child.localName === 'path' || child.localName === 'line') {
+          switch (child.localName) {
+          case "circle":
+            shape = new Circle(child);
+            break;
+          case "ellipse":
+            shape = new Ellipse(child);
+            break;
+          case "line":
+            // shape = new Y.ACMACS.Line(child);
+            shape = new Y.ACMACS.Line({
+              // Simulate SVGLineElement
+              localName: 'line',
+              getAttributeNS: function (ns, name) {
+                return this[name];
+              },
+              x1: child.getAttribute('x1'),
+              x2: child.getAttribute('x2'),
+              y1: child.getAttribute('y1'),
+              y2: child.getAttribute('y2')
+            });
+            break;
+          case "path":
+            shape = new Y.ACMACS.Path(child);
+            break;
+          case "polygon":
+            shape = new Polygon(child);
+            break;
+          case "rect":
+            shape = new Rectangle(child);
+            break;
+          default:
+            // do nothing for now
+          }
+
+          if (shape != null) {
+            shapes.push(shape);
+          }
+        }
+      }
+    }
+  };
+
+  function showIntersections() {
+    var
+      inter,
+      i,
+      coord,
+      point;
+
+    if (shapes.length >= 2) {
+      inter = Y.ACMACS.intersectShapes(shapes[0], shapes[1]);
+      console.log(inter);
+
+      info.data = inter.status;
+      for (i = 0; i < inter.points.length; i += 1) {
+        coord = inter.points[i];
+
+        if (i >= points.length) {
+          point = document.createElementNS("http://www.w3.org/2000/svg", "use");
+
+          point.setAttributeNS(
+            "http://www.w3.org/1999/xlink",
+            "href",
+            "#intersection"
+          );
+          document.getElementById('basegroup').appendChild(point);
+          points.push(point);
+        }
+        points[i].setAttributeNS(null, "x", coord.x);
+        points[i].setAttributeNS(null, "y", coord.y);
+        points[i].setAttributeNS(null, "display", "inline");
+      }
+
+      for (var i = inter.points.length; i < points.length; i++) {
+        points[i].setAttributeNS(null, "display", "none");
+      }
+    }
+  }
+
+  initTest();
+});
+    </script>
+  </body>
+</html>
