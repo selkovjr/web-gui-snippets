@@ -6,4 +6,10 @@ I attached custom data to nodes using arbitrary object properties and had a susp
 
 We succeeded in keeping massive meta-data attached to a large number of SVG nodes.
 
+```javascript
+      for (el of this.layer.groupDOMNode.childNodes) {
+        el.property = nodeNo;
+        nodeNo += 1;
+      );
+```
 ![Screenshot](svg-node-property-screenshot.png)
