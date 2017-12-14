@@ -1,7 +1,5 @@
-/*
-  # license
-  # license.
-*/
+YUI.add('acmacs-maplayer', function(Y) {
+
 // ======================================================================
 
 // _Stackable map layer_
@@ -1089,6 +1087,9 @@ Y.namespace('ACMACS').MapLayer = Y.Base.create(
   code.staticProperties
 );
 
+}, '@VERSION@', {
+  requires: ['base', 'node', 'acmacs-base', 'acmacs-layer']
+});
 /*======================================================================
  * Local Variables:
  * indent-tabs-mode: nil

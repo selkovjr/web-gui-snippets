@@ -1,7 +1,5 @@
-/*
-  # license
-  # license.
-*/
+YUI.add('acmacs-mappoint', function(Y) {
+
 // ======================================================================
 
 // _Map point_
@@ -591,6 +589,9 @@ Y.namespace('ACMACS').MapPoint = function (config) {
   this.initializer(config);
 };
 
+}, '@VERSION@', {
+  requires: ['base', 'node', 'acmacs-base']
+});
 
 /*======================================================================
  * Local Variables:

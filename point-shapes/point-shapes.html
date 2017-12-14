@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ACMACS.LayerWidget test: node properties</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yui/3.18.1/yui/yui-debug.js"></script>
+    <script src="point-shapes.js"></script>
+    <style type="text/css">
+#testbed {
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
+.yui3-acmacslayerwidget-content {
+  border-style: solid;
+  border-width: 1px;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGElEQVQYV2N4DwX/oYBhgARgDJjEAAkAAEC99wFuu0VFAAAAAElFTkSuQmCC');
+}
+
+svg text {
+  fill: grey;
+  font-weight:normal;
+  font-family: sans-serif;
+  text-decoration:none;
+}
+    </style>
+  </head>
+  <body class="yui3-skin-sam">
+    <script type="text/javascript">
+YUI_config = {
+  modules: {
+    'acmacs-base': { fullpath: '../assets/js/acmacs-base.js' },
+    'svg-methods': { fullpath: '../assets/js/svg-methods.js' },
+    'array-methods': { fullpath: '../assets/js/array-methods.js' },
+    'acmacs-profile': { fullpath: '../assets/js/acmacs-profile.js' },
+    'acmacs-layer': { fullpath: '../assets/js/acmacs-layer.js' },
+    'acmacs-background': { fullpath: '../assets/js/acmacs-background.js' },
+    'acmacs-layerstack': { fullpath: '../assets/js/acmacs-layerstack.js' },
+    'acmacs-map': { fullpath: '../assets/js/acmacs-map.js' },
+    'acmacs-map-interactivity': { fullpath: '../assets/js/acmacs-map-interactivity.js' },
+    'acmacs-map-state': { fullpath: '../assets/js/acmacs-map-state.js' },
+    'acmacs-map-ui': { fullpath: '../assets/js/acmacs-map-ui.js' },
+    'acmacs-maplayer': { fullpath: '../assets/js/acmacs-maplayer.js' },
+    'acmacs-mappoint': { fullpath: '../assets/js/acmacs-mappoint.js' }
+  }
+};
+YUI({
+  combine: false,
+  allowRollup: false,
+  useBrowserConsole: true,
+  filter: 'raw',
+  filters: {
+    'acmacs-base': 'debug',
+    'acmacs-layer': 'debug',
+    'point-shapes': 'debug',
+    'template-micro': 'debug'
+  }
+}).use('acmacs-map', 'point-shape-tests', function (Y) {
+  Y.ACMACS.NodeTests.setUp();
+});
+    </script>
+    <div id="log"></div>
+  </body>
+</html>
+

@@ -1,11 +1,7 @@
-/*
-  # license
-  # license.
-*/
-
 /*global Y: false */
 /*jslint regexp: false */
 
+YUI.add('acmacs-map-state', function(Y) {
 /**
  * Interactive ACMACS map widget
  *
@@ -3106,6 +3102,10 @@ Y.namespace('ACMACS').MapWidget = Y.Base.create(
   code.prototypeProperties,
   code.staticProperties
 );
+
+}, '@VERSION@', {
+  requires: ['base', 'node', 'acmacs-base']
+});
 /*======================================================================
  * Local Variables:
  * indent-tabs-mode: nil

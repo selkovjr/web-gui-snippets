@@ -1748,7 +1748,7 @@ Y.namespace('ACMACS').LayerWidget = Y.Base.create(
 
 
 }, '@VERSION@', {
-  requires: ['base', 'acmacs-base']
+  requires: ['base', 'acmacs-base', 'svg-methods', 'array-methods']
 });
 
 /*======================================================================

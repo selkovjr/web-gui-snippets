@@ -1,7 +1,4 @@
-/*
-  # license
-  # license.
-*/
+YUI.add('acmacs-map-interactivity', function(Y) {
 
 /*global Y: false */
 
@@ -870,6 +867,10 @@ Y.ACMACS.MapWidgetInteractivity.prototype = {
     return list;
   }
 };
+
+}, '@VERSION@', {
+  requires: ['base', 'node', 'acmacs-base']
+});
 /*======================================================================
  * Local Variables:
  * indent-tabs-mode: nil

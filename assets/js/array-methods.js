@@ -1,7 +1,4 @@
-/*
-  # license
-  # license.
-*/
+YUI.add('array-methods', function(Y) {
 
 /**
  * Array extensions
@@ -65,6 +62,10 @@ if (!Array.prototype.max) {
     );
   };
 }
+
+}, '@VERSION@', {
+  requires: []
+});
 
 /*======================================================================
  * Local Variables:

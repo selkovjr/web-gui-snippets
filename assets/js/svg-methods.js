@@ -1,7 +1,4 @@
-/*
-  # license
-  # license.
-*/
+YUI.add('svg-methods', function(Y) {
 
 /*jslint regexp: false */
 /*global
@@ -810,6 +807,9 @@ SVGLineElement.prototype.fakeZoom = function (px, py, delta) {
   return [dx, dy];
 }; // fakeZoom
 
+}, '@VERSION@', {
+  requires: ['base', 'node']
+});
 
 /*======================================================================
  * Local Variables:

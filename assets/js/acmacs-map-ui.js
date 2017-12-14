@@ -1,7 +1,4 @@
-/*
-  # license
-  # license.
-*/
+YUI.add('acmacs-map-ui', function(Y) {
 
 /*global Y: false */
 
@@ -285,6 +282,9 @@ var code = {
 // [`acmacs-map-state.js`](acmacs-map-state.html).
 Y.mix(Y.ACMACS.MapWidget.prototype, code, true);
 
+}, '@VERSION@', {
+  requires: ['base', 'node', 'acmacs-base']
+});
 /*======================================================================
  * Local Variables:
  * indent-tabs-mode: nil
