@@ -1,7 +1,5 @@
-/*
-  # license
-  # license.
-*/
+YUI.add('acmacs-shadowlayer', function(Y) {
+
 // ======================================================================
 
 // ----------------------------------------------------------------------------
@@ -19,7 +17,7 @@
 // It is even possible that this method achieves a better performance because it
 // relieves me from doing expensive calculations in JavaScript.
 
-// This module is based on `Y.ACMACS.LayerWidget`, but it redefiens some of
+// This module is based on `Y.ACMACS.LayerWidget`, but it redefines some of
 // LayerWidget's methods for efficiency.
 
 /*global Y: false, document: false */
@@ -457,6 +455,9 @@ Y.namespace('ACMACS').ShadowLayer = Y.Base.create(
   code.staticProperties
 );
 
+}, '@VERSION@', {
+  requires: ['base', 'acmacs-base', 'acmacs-layer', 'svg-methods', 'array-methods']
+});
 
 /*======================================================================
  * Local Variables:

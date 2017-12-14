@@ -1,7 +1,5 @@
-/*
-  # license
-  # license.
-*/
+YUI.add('acmacs-labellayer', function(Y) {
+
 // ======================================================================
 
 // _Stackable label layer_
@@ -238,6 +236,10 @@ Y.namespace('ACMACS').LabelLayer = Y.Base.create(
   code.prototypeProperties,
   code.staticProperties
 );
+
+}, '@VERSION@', {
+  requires: ['base', 'acmacs-base', 'acmacs-layer', 'svg-methods', 'array-methods']
+});
 
 /*======================================================================
  * Local Variables:

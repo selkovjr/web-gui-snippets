@@ -1088,7 +1088,7 @@ Y.namespace('ACMACS').MapLayer = Y.Base.create(
 );
 
 }, '@VERSION@', {
-  requires: ['base', 'node', 'acmacs-base', 'acmacs-layer']
+  requires: ['base', 'node', 'acmacs-base', 'acmacs-layer', 'acmacs-mappoint', 'kd-tree']
 });
 /*======================================================================
  * Local Variables:

@@ -307,6 +307,18 @@ var code = {
     }
   },
 
+  translateLabelSimple: function (dx, dy) {
+    var x, y, bb;
+
+    x = parseFloat(this.textDOMNode.getAttribute('x')) + dx;
+    y = parseFloat(this.textDOMNode.getAttribute('y')) + dy;
+    this.textDOMNode.setAttribute('x', x);
+    this.textDOMNode.setAttribute('y', y);
+
+    bb = this.textDOMNode.getBBox();
+    this.textDOMNode.X = bb.x + bb.width / 2;
+    this.textDOMNode.Y = bb.y + bb.height / 2;
+  },
 
   pointerLabelMoveStart: function (e) {
     this.pickupPoint = this.labelLayer.worldPoint(e.x, e.y);

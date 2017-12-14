@@ -1,8 +1,4 @@
-/*
-  # license
-  # license.
-*/
-
+YUI.add('transformation-components', function(Y) {
 /*global SVGMatrix: false, Y: false */
 
 /**
@@ -226,3 +222,5 @@ SVGMatrix.prototype.chirality = function () {
 SVGMatrix.prototype.rotation = function () {
   return Math.atan2(this.b, this.d);
 };
+
+}, '@VERSION@', {});

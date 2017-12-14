@@ -1,3 +1,4 @@
+YUI.add('acmacs-targetlayer', function(Y) {
 /*
   # license
   # license.
@@ -589,6 +590,10 @@ Y.namespace('ACMACS').TargetLayer = Y.Base.create(
   code.prototypeProperties,
   code.staticProperties
 );
+
+}, '@VERSION@', {
+  requires: ['base', 'acmacs-base', 'acmacs-layer', 'svg-methods', 'array-methods', 'pngdecoder']
+});
 
 /*======================================================================
  * Local Variables:
