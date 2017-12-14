@@ -305,7 +305,7 @@ YUI.add('kdtree-tests', function (Y) {
       Y.Assert.isInstanceOf(KdNode, this.kdTree.root, 'The root property of the new tree must be a Node instance.');
       Y.assert(Y.substitute('x: {0}, y: {1}', this.kdTree.root.obj) === 'x: 0.5771058225857544, y: -1.2558547054428553', 'The object in root.obj must have coordinates x = 0.5771058225857544 and y = -1.2558547054428553');
 
-      Y.assert(this.kdTree.balanceFactor() === 1.0735111456733022, 'Tree balance factor must be equal to 1.073511145673302');
+      Y.assert(this.kdTree.balanceFactor() >= 1.073 && this.kdTree.balanceFactor() <= 1.074, 'Tree balance factor must be approximately equal to 1.0735');
 
       // result = this.kdTree.nearest({x: -0.5, y: 0.4}, 3);
       result = this.kdTree.nearest({0: 1.124, 1: 1.775}, 3);
