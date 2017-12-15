@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1-D overscroll test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yui/3.18.1/yui/yui.js"></script>
+    <script src="overscroll-1.js"></script>
+    <style>
+#ruler{
+  position: absolute;
+  top: 10px;
+  left: 17px;
+  width: 41px;
+  height: 391px;
+  background-image: url('../assets/images/ruler-v.png');
+}
+
+#container {
+  position: relative;
+  margin-left: 50px;
+  margin-top: 110px;
+  width: 500px;
+  height: 200px;
+  background: #dde;
+}
+
+#widget{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 20px;
+  height: 200px;
+  overflow: visible;
+  background: #c9a;
+}
+
+#report{
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  width: 350px;
+  height: 200px;
+  margin: 0px;
+}
+
+#controls{
+  position: absolute;
+  top: 0px;
+  left: 400px;
+  width: 100px;
+  height: 300px;
+}
+
+#schedule-b{
+  position: absolute;
+  top: 0px;
+  left: 100px;
+  width: 100px;
+  height: 300px;
+}
+
+#schedule-tb{
+  position: absolute;
+  top: 0px;
+  left: 200px;
+  width: 100px;
+  height: 300px;
+}
+
+
+.step_default {
+  background: none;
+  color: black;
+}
+
+.step_current {
+  background: grey;
+  color: white;
+}
+
+*/
+    </style>
+  </head>
+  <body class="yui3-skin-sam">
+    <script>
+YUI({
+  combine: false,
+  allowRollup: false,
+  useBrowserConsole: true,
+  filter: 'raw',
+  filters: {
+    'overscroll-1': 'debug'
+  }
+}).use('overscroll-1', function (Y) {
+  Y.ACMACS.OverscrollTest.setUp();
+});
+    </script>
+    <div id="log"></div>
+  </body>
+</html>
+

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2-D overscroll test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yui/3.18.1/yui/yui.js"></script>
+    <script src="overscroll-2.js" type="text/javascript"></script>
+    <style type="text/css">
+#ruler-v{
+  position: absolute;
+  top: 10px;
+  left: 17px;
+  width: 41px;
+  height: 391px;
+  background-image: url('../assets/images/ruler-v.png');
+}
+
+#ruler-h{
+  position: absolute;
+  top: 20px;
+  left: 18px;
+  width: 391px;
+  height: 41px;
+  z-index: -1;
+  background-image: url('../assets/images/ruler-h.png');
+}
+
+#container {
+  position: relative;
+  margin-left: 100px;
+  margin-top: 110px;
+  width: 800px;
+  height: 400px;
+  background: #dde;
+}
+
+#stack {
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  z-index: 2;
+}
+
+#widget {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100px;
+  height: 200px;
+  overflow: visible;
+  background: #c9a;
+}
+
+#report {
+  position: absolute;
+  top: 0px;
+  left: 120px;
+  width: 320px;
+  height: 200px;
+  margin: 0px;
+}
+
+#controls {
+  position: absolute;
+  top: 0px;
+  left: 420px;
+  width: 200px;
+  height: 400px;
+}
+
+#event-log {
+  float: left;
+  margin-top: 10px;
+}
+
+#selector-container {
+  float: left;
+  margin-top: 10px;
+  width: 300px;
+}
+
+
+#instructions {
+  position: absolute;
+  top: 340px;
+  left: 120px;
+  width: 350px;
+}
+
+#constraint-container {
+  position: absolute;
+  top: 394px;
+  left: 116px;
+  width: 350px;
+}
+
+#zoom {
+  position: absolute;
+  top: 440px;
+  left: 120px;
+  width: 350px;
+}
+    </style>
+  </head>
+  <body class="yui3-skin-sam">
+    <script type="text/javascript">
+YUI_config = {
+  modules: {
+    'base64reader': { fullpath: '../assets/js/base64reader.js' },
+    'pngdecoder': { fullpath: '../assets/js/pngdecoder.js' },
+    'kd-tree': { fullpath: '../assets/js/kd-tree.js' },
+    'svg-methods': { fullpath: '../assets/js/svg-methods.js' },
+    'transformation-components': { fullpath: '../assets/js/transformation-components.js' },
+    'overscroll-elastic': { fullpath: '../assets/js/overscroll-elastic.js' },
+    'array-methods': { fullpath: '../assets/js/array-methods.js' },
+    'acmacs-base': { fullpath: '../assets/js/acmacs-base.js' },
+    'acmacs-profile': { fullpath: '../assets/js/acmacs-profile.js' },
+    'acmacs-grid': { fullpath: '../assets/js/acmacs-grid.js' },
+    'acmacs-connections': { fullpath: '../assets/js/acmacs-connections.js' },
+    'acmacs-procrustes': { fullpath: '../assets/js/acmacs-procrustes.js' },
+    'acmacs-sidebar': { fullpath: '../assets/js/acmacs-sidebar.js' },
+    'acmacs-layer': { fullpath: '../assets/js/acmacs-layer.js' },
+    'acmacs-infolayer': { fullpath: '../assets/js/acmacs-infolayer.js' },
+    'acmacs-labellayer': { fullpath: '../assets/js/acmacs-labellayer.js' },
+    'acmacs-shadowlayer': { fullpath: '../assets/js/acmacs-shadowlayer.js' },
+    'acmacs-targetlayer': { fullpath: '../assets/js/acmacs-targetlayer.js' },
+    'acmacs-background': { fullpath: '../assets/js/acmacs-background.js' },
+    'acmacs-layerstack': { fullpath: '../assets/js/acmacs-layerstack.js' },
+    'acmacs-map': { fullpath: '../assets/js/acmacs-map.js' },
+    'acmacs-map-interactivity': { fullpath: '../assets/js/acmacs-map-interactivity.js' },
+    'acmacs-map-state': { fullpath: '../assets/js/acmacs-map-state.js' },
+    'acmacs-map-ui': { fullpath: '../assets/js/acmacs-map-ui.js' },
+    'acmacs-maplayer': { fullpath: '../assets/js/acmacs-maplayer.js' },
+    'acmacs-mappoint': { fullpath: '../assets/js/acmacs-mappoint.js' }
+  }
+};
+YUI({
+  combine: false,
+  allowRollup: false,
+  useBrowserConsole: true,
+  filter: 'raw',
+  filters: {
+    'acmacs-base': 'debug',
+    'acmacs-grid': 'debug',
+    'acmacs-map': 'debug',
+    'acmacs-map-interactivity': 'raw',
+    'acmacs-layer': 'debug',
+    'acmacs-infolayer': 'debug',
+    'acmacs-targetlayer': 'debug',
+    'acmacs-shadowlayer': 'debug',
+    'acmacs-layerstack': 'debug',
+    'acmacs-maplayer': 'debug',
+    'acmacs-labellayer': 'debug',
+    'acmacs-background': 'debug',
+    'acmacs-connections': 'debug',
+    'acmacs-procrustes': 'debug',
+    'acmacs-sidebar': 'debug',
+    'overscroll-elastic': 'debug',
+    'overscroll-2': 'debug',
+    'overscroll-elastic': 'debug',
+    'zoom-elastic': 'debug'
+  }
+}).use('overscroll-2', 'overscroll-elastic', 'node', function (Y) {
+  Y.ACMACS.OverscrollTest.setUp();
+});
+    </script>
+    <div id="log"></div>
+  </body>
+</html>
+
