@@ -1,0 +1,12 @@
+.yui3-acmacsbackgroundlayer,
+.yui3-acmacsbackgroundlayer canvas,
+{
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.yui3-acmacsbackgroundlayer-hidden {
+  display: none;
+}

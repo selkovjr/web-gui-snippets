@@ -1,7 +1,5 @@
-/*
-  # license
-  # license.
-*/
+YUI.add('acmacs-sidebar', function(Y) {
+
 // ======================================================================
 
 // Signature of Y.Base.create(..) is
@@ -186,6 +184,10 @@ Y.namespace('ACMACS').SidebarWidget = Y.Base.create(
       }
     }
   }
+});
+
+}, '@VERSION@', {
+  requires: ['base', 'acmacs-base']
 });
 
 /*======================================================================

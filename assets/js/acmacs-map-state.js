@@ -582,13 +582,13 @@ var code = {
       ));
 
       this.listeners.push(this.after(
-        Y.Array.map([
+        [
           'connectionsLayerVisible',
           'labelsVisible',
           'procrustesLayerVisible',
           'renderConnectionLines',
           'renderErrorLines'
-        ], function (attr) {
+        ].map(function (attr) {
           return attr + 'Change';
         }),
         function (e) {

@@ -1,3 +1,5 @@
+YUI.add('overscroll-elastic', function(Y) {
+
 /*global Y: false, document: false */
 
 var code = {
@@ -340,4 +342,8 @@ var code = {
 };
 
 Y.namespace('ACMACS').ElasticOverscroll = code;
+
+}, '@VERSION@', {
+  requires: ['base']
+});
 

@@ -1,7 +1,5 @@
-/*
-  # license
-  # license.
-*/
+YUI.add('acmacs-connections', function(Y) {
+
 // ======================================================================
 
 /*global Y: false, document: false */
@@ -900,6 +898,9 @@ Y.namespace('ACMACS').ConnectionsLayer = Y.Base.create('acmacsConnectionsLayer',
   }
 });
 
+}, '@VERSION@', {
+  requires: ['base', 'acmacs-base', 'acmacs-layer']
+});
 /*======================================================================
  * Local Variables:
  * indent-tabs-mode: nil

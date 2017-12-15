@@ -1,0 +1,13 @@
+.yui3-acmacstargetlayer {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.acmacs-layerstack-hud {
+  opacity: 0;
+}
+
+.acmacs-map-hud {
+  opacity: 0;
+}

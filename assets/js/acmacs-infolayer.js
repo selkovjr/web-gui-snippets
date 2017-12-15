@@ -1,8 +1,6 @@
-/*
-  # license
-  # license.
-*/
-// ======================================================================
+YUI.add('acmacs-infolayer', function(Y) {
+
+  // ======================================================================
 
 // Saved this from map-interactivity
 
@@ -296,6 +294,9 @@ Y.namespace('ACMACS').InfoLayer = Y.Base.create(
   code.staticProperties
 );
 
+}, '@VERSION@', {
+  requires: ['base', 'node', 'acmacs-base', 'acmacs-layer']
+});
 /*======================================================================
  * Local Variables:
  * indent-tabs-mode: nil

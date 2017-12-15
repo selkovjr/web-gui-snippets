@@ -1,0 +1,12 @@
+/* Using the visibility style instead of display to avoid the undefined
+ * bounding box bug in Firefox. Other layers may as well use the same method
+ * for manipulating their visibility. */
+.yui3-acmacslabellayer {
+  /* display: block; */
+  visibility: visible
+}
+
+.yui3-acmacslabellayer-hidden {
+  /* display: none; */
+  visibility: hidden
+}

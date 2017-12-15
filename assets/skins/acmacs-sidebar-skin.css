@@ -1,0 +1,22 @@
+.yui3-acmacssidebarwidget {
+  background: #f8f8f8;
+}
+
+.yui3-acmacssidebarwidget-content {
+}
+
+.acmacs-layermenu {
+  text-align: left;
+}
+
+/*
+ * Override the background-image style for slider-base to make sure the image
+ * loads correctly.
+ * */
+
+.yui3-skin-sam .acmacs-layermenu .yui3-slider-x .yui3-slider-rail,
+.yui3-skin-sam .acmacs-layermenu .yui3-slider-x .yui3-slider-rail-cap-left,
+.yui3-skin-sam .acmacs-layermenu .yui3-slider-x .yui3-slider-rail-cap-right {
+  background-image: url(yui?current/build/slider-base/assets/skins/sam/rail-x.png);
+}
+

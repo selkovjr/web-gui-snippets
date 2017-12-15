@@ -1,7 +1,5 @@
-/*
-  # license
-  # license.
-*/
+YUI.add('acmacs-layerstack', function(Y) {
+
 // ======================================================================
 
 // ------------------------------------------------------------------------
@@ -1934,6 +1932,10 @@ Y.namespace('ACMACS').LayerStackWidget = Y.Base.create(
   code.prototypeProperties,
   code.staticProperties
 );
+
+}, '@VERSION@', {
+  requires: ['base', 'node', 'acmacs-base', 'acmacs-layer']
+});
 
 /*======================================================================
  * Local Variables:

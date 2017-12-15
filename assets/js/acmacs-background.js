@@ -1,7 +1,5 @@
-/*
-  # license
-  # license.
-*/
+YUI.add('acmacs-background', function(Y) {
+
 // ======================================================================
 
 /*global Y: false */
@@ -130,6 +128,9 @@ Y.namespace('ACMACS').BackgroundLayer = Y.Base.create('acmacsBackgroundLayer', Y
   }
 });
 
+}, '@VERSION@', {
+  requires: ['base', 'acmacs-base', 'acmacs-layer']
+});
 /*======================================================================
  * Local Variables:
  * indent-tabs-mode: nil

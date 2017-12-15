@@ -1,0 +1,27 @@
+.yui3-acmacstooltip {
+    position: absolute;
+    /* background: -webkit-gradient(linear, left top, right bottom, from(#F0F0F0), to(#CBCA8D)); */
+    background: hsl(30, 70%, 60%);
+    border-radius: 8px 8px 8px 8px;
+    border: 1px solid hsl(30, 70%, 30%);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    padding: 3px 7px;
+    z-index: 1800;
+}
+
+.yui3-acmacstooltip-hidden {
+    transparecy: 1;
+    display: none;
+}
+
+.yui3-acmacstooltip-content {
+    overflow: hidden;
+}
+
+.yui3-acmacstooltip-content-expanded {
+    -moz-box-sizing: border-box;
+    height: 100%;
+}
+.yui3-acmacstooltip-tmp-forcesize {
+    overflow: hidden !important;
+}

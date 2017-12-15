@@ -1,0 +1,40 @@
+.yui3-acmacslayerstackwidget {
+  float: left;
+}
+
+.yui3-acmacslayerstackwidget-content {
+  /*
+   * Relative positioning of the layer stack is important: without it,
+   * child nodes will be positioned relative to its parent, ignoring
+   * its dimensions
+   */
+  /* Now that there is a relatively positioned InfoLayer, it seems to
+   * work fine being absolutely positioned
+   */
+  position: absolute;
+}
+
+.yui3-acmacslayerstackwidget-margin-left {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.yui3-acmacslayerstackwidget-margin-top {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.yui3-acmacslayerstackwidget-margin-right {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.yui3-acmacslayerstackwidget-margin-bottom {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+

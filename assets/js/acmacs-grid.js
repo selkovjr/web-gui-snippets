@@ -1,7 +1,5 @@
-/*
-  # license
-  # license.
-*/
+YUI.add('acmacs-grid', function(Y) {
+
 // ======================================================================
 
 // _Stackable map layer_
@@ -181,6 +179,10 @@ Y.namespace('ACMACS').GridLayer = Y.Base.create('acmacsGridLayer', Y.ACMACS.Laye
       value: 'default'
     }
   }
+});
+
+}, '@VERSION@', {
+  requires: ['base', 'acmacs-base', 'acmacs-layer', 'svg-methods']
 });
 
 /*======================================================================

@@ -1,0 +1,9 @@
+.map-selection {
+  fill: blue;
+  opacity: 0.2;
+}
+
+.map-selection-negative {
+  fill: red;
+  opacity: 0.2;
+}

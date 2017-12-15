@@ -1,0 +1,60 @@
+.yui3-acmacsinfolayer {
+  float: left;
+}
+
+.yui3-acmacsinfolayer-content {
+  /*
+   * Relative positioning of the info layer is important: without it,
+   * child nodes will be positioned relative to its parent, ignoring
+   * its dimensions
+   */
+  position: relative;
+}
+
+.yui3-acmacsinfolayer-margin-left {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.yui3-acmacsinfolayer-margin-top {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.yui3-acmacsinfolayer-margin-right {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.yui3-acmacsinfolayer-margin-bottom {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.yui3-acmacsinfolayer-hidden {
+  opacity: 0.0;
+}
+
+/* --- content layout --- */
+.acmacs-infolayer-sidebar {
+  float: left;
+  width: 100px;
+  display: inline;
+}
+
+.acmacs-infolayer-content {
+  float: left;
+  width: 80%;
+  padding: 20px 0;
+  margin: 0 0 0 2%;
+}
+
+.acmacs-infolayer-footer {
+  clear: both;
+  text-align: right;
+  height: 32px;
+}

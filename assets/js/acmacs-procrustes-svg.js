@@ -1,7 +1,5 @@
-/*
-  # license
-  # license.
-*/
+YUI.add('acmacs-procrustes', function(Y) {
+
 // ======================================================================
 
 // _Stackable procrustes layer_
@@ -207,6 +205,9 @@ Y.namespace('ACMACS').ProcrustesLayer = Y.Base.create('acmacsProcrustesLayer', Y
   }
 });
 
+}, '@VERSION@', {
+  requires: ['base', 'acmacs-base', 'acmacs-layer']
+});
 /*======================================================================
  * Local Variables:
  * indent-tabs-mode: nil
